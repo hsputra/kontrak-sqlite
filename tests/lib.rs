@@ -182,6 +182,7 @@ fn statement_kind() {
 
     assert_eq!(ok!(statement.next()), State::Row);
 
+
     assert_eq!(statement.kind(0), Type::Integer);
     assert_eq!(statement.kind(1), Type::String);
     assert_eq!(statement.kind(2), Type::Float);
@@ -194,12 +195,22 @@ fn statement_read() {
     let statement = "SELECT * FROM users";
     let mut statement = ok!(connection.prepare(statement));
 
+    // let mut count = 0;
+    while let State::Row = ok!(statement.next()) {
+        println!("{}", statement.read::<i64>(0).unwrap());
+        println!("{}", statement.read::<String>(1).unwrap());
+        println!("{}", statement.read::<f64>(2).unwrap());
+        // println!("{}", statement.read::<u8>(3).unwrap());
+        // count += 1;
+    }
+
     assert_eq!(ok!(statement.next()), State::Row);
     assert_eq!(ok!(statement.read::<i64>(0)), 1);
     assert_eq!(ok!(statement.read::<String>(1)), String::from("Alice"));
     assert_eq!(ok!(statement.read::<f64>(2)), 42.69);
     assert_eq!(ok!(statement.read::<Vec<u8>>(3)), vec![0x42, 0x69]);
     assert_eq!(ok!(statement.next()), State::Done);
+
 }
 
 #[test]
@@ -211,6 +222,7 @@ fn statement_wildcard_with_binding() {
 
     let mut count = 0;
     while let State::Row = ok!(statement.next()) {
+        println!("{}:{}", count, statement.read::<String>(0).unwrap() );
         count += 1;
     }
     assert_eq!(count, 6);
@@ -224,6 +236,8 @@ fn statement_wildcard_without_binding() {
 
     let mut count = 0;
     while let State::Row = ok!(statement.next()) {
+        println!("{}:{}", count, statement.read::<String>(0).unwrap() );
+        // println!("{}", statement.read::<String>(0).unwrap());
         count += 1;
     }
     assert_eq!(count, 6);

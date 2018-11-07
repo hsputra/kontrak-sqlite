@@ -1,4 +1,4 @@
-// #![feature(test)]
+#![feature(test)]
 
 extern crate renegades_sqlite;
 extern crate test;

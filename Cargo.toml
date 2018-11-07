@@ -1,8 +1,9 @@
 [package]
 name = "renegades_sqlite"
-version = "0.1.1"
+version = "0.1.2"
 license = "Apache-2.0/MIT"
 authors = ["Henry Syahputra"]
+repository = "https://github.com/hsputra/renegades-sqlite"
 description = "The package provides an interface to SQLite."
 readme = "README.md"
 categories = ["api-bindings", "database"]
