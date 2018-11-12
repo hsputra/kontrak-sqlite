@@ -81,4 +81,3 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 [documentation-url]: https://docs.rs/kontrak-sqlite
 [package-img]: https://img.shields.io/crates/v/kontrak-sqlite.svg
 [package-url]: https://crates.io/crates/kontrak-sqlite
-# kontrak-sqlite
