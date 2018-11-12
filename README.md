@@ -2,7 +2,7 @@
 
 The package provides an interface to [SQLite][1].
 
-## Example
+##  The Example
 
 Open a connection, create a table, and insert some rows:
 
