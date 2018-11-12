@@ -5,7 +5,7 @@
 //! Open a connection, create a table, and insert some rows:
 //!
 //! ```
-//! let connection = renegades_sqlite::open(":memory:").unwrap();
+//! let connection = kontrak_sqlite::open(":memory:").unwrap();
 //!
 //! connection
 //!     .execute(
@@ -21,7 +21,7 @@
 //! Select some rows and process them one by one as plain text:
 //!
 //! ```
-//! # let connection = renegades_sqlite::open(":memory:").unwrap();
+//! # let connection = kontrak_sqlite::open(":memory:").unwrap();
 //! # connection
 //! #     .execute(
 //! #         "
@@ -45,8 +45,8 @@
 //! the previous technique:
 //!
 //! ```
-//! use renegades_sqlite::State;
-//! # let connection = renegades_sqlite::open(":memory:").unwrap();
+//! use kontrak_sqlite::State;
+//! # let connection = kontrak_sqlite::open(":memory:").unwrap();
 //! # connection
 //! #     .execute(
 //! #         "
@@ -73,8 +73,8 @@
 //! statement providing the concept of row and featuring all-at-once binding:
 //!
 //! ```
-//! use renegades_sqlite::Value;
-//! # let connection = renegades_sqlite::open(":memory:").unwrap();
+//! use kontrak_sqlite::Value;
+//! # let connection = kontrak_sqlite::open(":memory:").unwrap();
 //! # connection
 //! #     .execute(
 //! #         "

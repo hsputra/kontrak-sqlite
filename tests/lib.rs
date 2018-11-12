@@ -1,7 +1,7 @@
-extern crate renegades_sqlite;
+extern crate kontrak_sqlite;
 extern crate temporary;
 
-use renegades_sqlite::{Connection, State, Type, Value};
+use kontrak_sqlite::{Connection, State, Type, Value};
 use std::path::Path;
 
 macro_rules! ok(($result:expr) => ($result.unwrap()));
@@ -53,7 +53,7 @@ fn connection_set_busy_handler() {
         .map(|_| {
             let path = path.to_path_buf();
             thread::spawn(move || {
-                let mut connection = ok!(renegades_sqlite::open(&path));
+                let mut connection = ok!(kontrak_sqlite::open(&path));
                 ok!(connection.set_busy_handler(|_| true));
                 let statement = "INSERT INTO users (id, name, age, photo) VALUES (?, ?, ?, ?)";
                 let mut statement = ok!(connection.prepare(statement));
@@ -244,7 +244,7 @@ fn statement_wildcard_without_binding() {
 }
 
 fn setup_english<T: AsRef<Path>>(path: T) -> Connection {
-    let connection = ok!(renegades_sqlite::open(path));
+    let connection = ok!(kontrak_sqlite::open(path));
     ok!(connection.execute(
         "
         CREATE TABLE english (value TEXT);
@@ -261,7 +261,7 @@ fn setup_english<T: AsRef<Path>>(path: T) -> Connection {
 }
 
 fn setup_users<T: AsRef<Path>>(path: T) -> Connection {
-    let connection = ok!(renegades_sqlite::open(path));
+    let connection = ok!(kontrak_sqlite::open(path));
     ok!(connection.execute(
         "
         CREATE TABLE users (id INTEGER, name TEXT, age REAL, photo BLOB);
