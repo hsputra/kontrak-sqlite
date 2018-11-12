@@ -1,6 +1,6 @@
-# Renegades SQLite [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] 
+# Kontrak-SQLite [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] 
 
-The package provides an interface to [SQLite][1].
+The package provides an interface to [Kontrak-SQLite][1].
 
 ##  The Example
 
@@ -77,8 +77,8 @@ pull request. Note that any contribution submitted for inclusion in the project
 will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 
 
-[documentation-img]: https://docs.rs/renegades_sqlite/badge.svg
-[documentation-url]: https://docs.rs/renegades_sqlite
-[package-img]: https://img.shields.io/crates/v/renegades_sqlite.svg
-[package-url]: https://crates.io/crates/renegades_sqlite
+[documentation-img]: https://docs.rs/kontrak-sqlite/badge.svg
+[documentation-url]: https://docs.rs/kontrak-sqlite
+[package-img]: https://img.shields.io/crates/v/kontrak-sqlite.svg
+[package-url]: https://crates.io/crates/kontrak-sqlite
 # kontrak-sqlite
