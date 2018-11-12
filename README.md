@@ -81,3 +81,4 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 [documentation-url]: https://docs.rs/renegades_sqlite
 [package-img]: https://img.shields.io/crates/v/renegades_sqlite.svg
 [package-url]: https://crates.io/crates/renegades_sqlite
+# kontrak-sqlite
